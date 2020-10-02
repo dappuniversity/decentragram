@@ -1,7 +1,7 @@
 {
-  "name": "Decentragram",
+  "name": "name...",
   "version": "0.1.0",
-  "description": "Decentralized Social Media",
+  "description": "description...",
   "author": "gregory@dappuniversity.com",
   "dependencies": {
     "babel-polyfill": "6.26.0",
