@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import Web3 from 'web3';
-import Identicon from 'identicon.js';
-import './App.css';
 import Decentragram from '../abis/Decentragram.json'
+import React, { Component } from 'react';
+import Identicon from 'identicon.js';
 import Navbar from './Navbar'
 import Main from './Main'
+import Web3 from 'web3';
+import './App.css';
 
 //Declare IPFS
 const ipfsClient = require('ipfs-http-client')
@@ -39,7 +39,7 @@ class App extends Component {
     const networkId = await web3.eth.net.getId()
     const networkData = Decentragram.networks[networkId]
     if(networkData) {
-      const decentragram = web3.eth.Contract(Decentragram.abi, networkData.address)
+      const decentragram = new web3.eth.Contract(Decentragram.abi, networkData.address)
       this.setState({ decentragram })
       const imagesCount = await decentragram.methods.imageCount().call()
       this.setState({ imagesCount })
