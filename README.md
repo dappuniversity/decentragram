@@ -8,8 +8,5 @@
 Tutorial video URL (comming)
 ```
 
-## 🔧 Project Diagram/Workflow:
-![Project Diagram/Workflow]()
-```
-t0d0
-```
+## 🔧 Project Diagram:
+![Project Diagram](https://i.gyazo.com/dbf35eeb3cd824f96ed91fc63995c50f.png)
