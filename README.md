@@ -1,9 +1,7 @@
-## :chart_with_upwards_trend: Cryptocurrency Tracker:
 ```
 "Social Media DApp."
 ```
 
-![Video URL](https://emojipedia-us.s3.amazonaws.com/content/2020/04/05/yt.png)
 ```
 Tutorial video URL (comming)
 ```
