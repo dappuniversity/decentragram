@@ -1,5 +1,7 @@
 const Decentragram = artifacts.require("Decentragram");
 
 module.exports = function(deployer) {
-  // Code goes here...
+  // This file moves smart contracts from our computer to a blockchain.
+  // It compiles them and turns them into machine readable code
+  deployer.deploy(Decentragram)
 };
