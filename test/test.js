@@ -27,6 +27,7 @@ contract('Decentragram', ([deployer, author, tipper]) => {
   })
 
   describe('images', async () => {
+    // Testing to see if our hardcoded image creation is working
     let result, imageCount
     const hash = 'QmV8cfu6n4NT5xRr2AHdKxFMTZEJrA44qgrBCr739BN9Wb'
 
@@ -38,6 +39,7 @@ contract('Decentragram', ([deployer, author, tipper]) => {
     //check event
     it('creates images', async () => {
       // SUCESS
+
       assert.equal(imageCount, 1)
       const event = result.logs[0].args
       assert.equal(event.id.toNumber(), imageCount.toNumber(), 'id is correct')
