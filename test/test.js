@@ -50,10 +50,10 @@ contract('Decentragram', ([deployer, author, tipper]) => {
 
 
       // FAILURE: Image must have hash
-      await decentragram.uploadImage('', 'Image description', { from: author }).should.be.rejected;
+      await decentragram.uploadImage('', 'Image description', {from: author}).should.be.rejected;
 
       // FAILURE: Image must have description
-      await decentragram.uploadImage('Image hash', '', { from: author }).should.be.rejected;
+      await decentragram.uploadImage('Image hash', '', {from: author}).should.be.rejected;
     })
 
     //check from Struct
