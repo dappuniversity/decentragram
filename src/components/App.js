@@ -6,6 +6,9 @@ import Decentragram from '../abis/Decentragram.json'
 import Navbar from './Navbar'
 import Main from './Main'
 
+const ipfsClient = require('ipfs-http-client')
+const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' })
+
 
 class App extends Component {
 
@@ -44,10 +47,66 @@ class App extends Component {
       const imagesCount = await decentragram.methods.imageCount().call()
       this.setState({ imagesCount })
 
+      for(let i = 1; i <= imagesCount; i++){
+        const image = await decentragram.methods.images(i).call()
+        this.setState({
+          images: [...this.state.images, image]
+        })
+      }
+
+      //Sorts the images with the highest tipped images first
+      this.setState({
+        images: this.state.images.sort((a,b) => b.tipAmount - a.tipAmount)
+      })
+
       this.setState({loading: false})
     } else {
       window.alert('Decentragram contract has not been deployed to the network')
     }
+  }
+
+  captureFile = event => {
+    event.preventDefault()
+
+    //Capture the file off the submission
+    const file = event.target.files[0]
+    const reader = new window.FileReader()
+    reader.readAsArrayBuffer(file)
+
+    //Take the uploaded file and turn it into something IPFS expects:
+    reader.onloadend = () => {
+      this.setState({ buffer: Buffer(reader.result) })
+      console.log('buffer', this.state.buffer)
+    }
+  }
+
+  uploadImage = description => {
+    console.log('Submitting this image to ipfs...')
+
+    //add file to the IPFS
+    ipfs.add(this.state.buffer, (err, result) => {
+      console.log('Ipfs result', result)
+      if (err) {
+        console.error(err)
+        return
+      }
+
+      this.setState({ loading: true })
+
+      //This line is what actually calls the uploadImage function from the smart contract
+      this.state.decentragram.methods.uploadImage(result[0].hash, description)
+      .send({ from: this.state.account }).on('transactionHash', (hash) => {
+        this.setState({ loading: false })
+      })
+    })
+  }
+
+  tipImageOwner = (id, tipAmount) => {
+    this.setState({ loading: true })
+    this.state.decentragram.methods.tipImageOwner(id).send({ from: this.state.account, value: tipAmount })
+    .on('transactionHash', (hash) => {
+      this.setState({ loading: false })
+    })
   }
 
   constructor(props) {
@@ -67,10 +126,12 @@ class App extends Component {
         { this.state.loading
           ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
           : <Main
-            // Code...
+            images={this.state.images}
+            tipImageOwner={this.tipImageOwner}
+            captureFile={this.captureFile}
+            uploadImage={this.uploadImage}
             />
           }
-        }
       </div>
     );
   }
