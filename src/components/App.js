@@ -77,18 +77,21 @@ class App extends Component {
     console.log("Submitting file to ipfs...")
 
     //adding file to the IPFS
-    ipfs.add(this.state.buffer, (error, result) => {
-      console.log('Ipfs result', result)
-      if(error) {
-        console.error(error)
-        return
-      }
+    try {
+      const result = await ipfs.add(this.state.buffer);
+      console.log('Ipfs result', result);
 
-      this.setState({ loading: true })
-      this.state.decentragram.methods.uploadImage(result[0].hash, description).send({ from: this.state.account }).on('transactionHash', (hash) => {
-        this.setState({ loading: false })
-      })
-    })
+      this.setState({ loading: true });
+      this.state.decentragram.methods
+        .uploadImage(result.path, description)
+        .send({ from: this.state.account })
+        .on('transactionHash', hash => {
+          this.setState({ loading: false });
+        });
+
+     } catch (error) {
+        console.error(error);
+     }
   }
 
   tipImageOwner(id, tipAmount) {
