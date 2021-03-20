@@ -73,7 +73,7 @@ class App extends Component {
     }
   }
 
-  uploadImage = description => {
+  uploadImage = async (description) => {
     console.log("Submitting file to ipfs...")
 
     //adding file to the IPFS
