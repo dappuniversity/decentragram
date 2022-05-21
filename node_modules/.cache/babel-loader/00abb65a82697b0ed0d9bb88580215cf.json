@@ -1,0 +1,1 @@
+{"ast":null,"code":"/** PURE_IMPORTS_START  PURE_IMPORTS_END */\nexport var observable = typeof Symbol === 'function' && Symbol.observable || '@@observable';","map":null,"metadata":{},"sourceType":"module"}

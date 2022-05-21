@@ -1,0 +1,1 @@
+{"ast":null,"code":"/** PURE_IMPORTS_START  PURE_IMPORTS_END */\nexport function hostReportError(err) {\n  setTimeout(function () {\n    throw err;\n  }, 0);\n}","map":null,"metadata":{},"sourceType":"module"}

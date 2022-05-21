@@ -1,0 +1,1 @@
+{"ast":null,"code":"/** PURE_IMPORTS_START _AsapAction,_AsapScheduler PURE_IMPORTS_END */\nimport { AsapAction } from './AsapAction';\nimport { AsapScheduler } from './AsapScheduler';\nexport var asap =\n/*@__PURE__*/\nnew AsapScheduler(AsapAction);","map":null,"metadata":{},"sourceType":"module"}

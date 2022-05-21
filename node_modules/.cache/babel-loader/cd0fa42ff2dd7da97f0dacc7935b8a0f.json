@@ -1,0 +1,1 @@
+{"ast":null,"code":"/**\n * Node.js module for Forge.\n *\n * @author Dave Longley\n *\n * Copyright 2011-2016 Digital Bazaar, Inc.\n */\nmodule.exports = {\n  // default options\n  options: {\n    usePureJavaScript: false\n  }\n};","map":null,"metadata":{},"sourceType":"script"}

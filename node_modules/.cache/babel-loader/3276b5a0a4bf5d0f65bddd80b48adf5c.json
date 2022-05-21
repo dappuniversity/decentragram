@@ -1,0 +1,1 @@
+{"ast":null,"code":"/**\n * Node.js module for Forge mask generation functions.\n *\n * @author Stefan Siegl\n *\n * Copyright 2012 Stefan Siegl <stesie@brokenpipe.de>\n */\nvar forge = require('./forge');\n\nrequire('./mgf1');\n\nmodule.exports = forge.mgf = forge.mgf || {};\nforge.mgf.mgf1 = forge.mgf1;","map":null,"metadata":{},"sourceType":"script"}
