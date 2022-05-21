@@ -1,0 +1,1 @@
+{"ast":null,"code":"/** PURE_IMPORTS_START  PURE_IMPORTS_END */\nexport var isArray = Array.isArray || function (x) {\n  return x && typeof x.length === 'number';\n};","map":null,"metadata":{},"sourceType":"module"}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"/** PURE_IMPORTS_START _symbol_observable PURE_IMPORTS_END */\nimport { observable as Symbol_observable } from '../symbol/observable';\nexport function isInteropObservable(input) {\n  return input && typeof input[Symbol_observable] === 'function';\n}","map":null,"metadata":{},"sourceType":"module"}

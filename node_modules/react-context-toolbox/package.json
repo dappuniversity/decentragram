@@ -1,0 +1,43 @@
+{
+  "name": "react-context-toolbox",
+  "version": "2.0.2",
+  "main": "index.js",
+  "module": "lib/es/index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/4Catalyzer/react-context-toolbox.git"
+  },
+  "author": "4Catalyzer",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "prettier": {
+    "printWidth": 79,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write --ignore-path .eslintignore",
+      "git add"
+    ]
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/test"
+    ],
+    "testEnvironment": "jsdom",
+    "setupFiles": [
+      "<rootDir>/test/index.js"
+    ]
+  },
+  "peerDependencies": {
+    "react": ">=16.3.2"
+  }
+}

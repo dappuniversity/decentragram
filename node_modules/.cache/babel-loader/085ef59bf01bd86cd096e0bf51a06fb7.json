@@ -1,0 +1,1 @@
+{"ast":null,"code":"/** PURE_IMPORTS_START _QueueAction,_QueueScheduler PURE_IMPORTS_END */\nimport { QueueAction } from './QueueAction';\nimport { QueueScheduler } from './QueueScheduler';\nexport var queue =\n/*@__PURE__*/\nnew QueueScheduler(QueueAction);","map":null,"metadata":{},"sourceType":"module"}

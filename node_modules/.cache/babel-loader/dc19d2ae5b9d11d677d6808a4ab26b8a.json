@@ -1,0 +1,1 @@
+{"ast":null,"code":"/** PURE_IMPORTS_START  PURE_IMPORTS_END */\nexport function isPromise(value) {\n  return !!value && typeof value.subscribe !== 'function' && typeof value.then === 'function';\n}","map":null,"metadata":{},"sourceType":"module"}

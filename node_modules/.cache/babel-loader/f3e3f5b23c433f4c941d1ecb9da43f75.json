@@ -1,0 +1,1 @@
+{"ast":null,"code":"module.exports = function () {\n  throw new Error('Readable.from is not available in the browser');\n};","map":null,"metadata":{},"sourceType":"script"}

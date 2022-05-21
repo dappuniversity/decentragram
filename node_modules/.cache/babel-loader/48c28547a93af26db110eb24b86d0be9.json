@@ -1,0 +1,1 @@
+{"ast":null,"code":"/**\n * Node.js module for Forge message digests.\n *\n * @author Dave Longley\n *\n * Copyright 2011-2017 Digital Bazaar, Inc.\n */\nvar forge = require('./forge');\n\nmodule.exports = forge.md = forge.md || {};\nforge.md.algorithms = forge.md.algorithms || {};","map":null,"metadata":{},"sourceType":"script"}

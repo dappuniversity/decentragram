@@ -1,0 +1,1 @@
+{"ast":null,"code":"/** PURE_IMPORTS_START  PURE_IMPORTS_END */\nexport var subscribeToArray = function subscribeToArray(array) {\n  return function (subscriber) {\n    for (var i = 0, len = array.length; i < len && !subscriber.closed; i++) {\n      subscriber.next(array[i]);\n    }\n\n    subscriber.complete();\n  };\n};","map":null,"metadata":{},"sourceType":"module"}

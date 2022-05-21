@@ -1,0 +1,1 @@
+{"ast":null,"code":"var v1 = require('./v1');\n\nvar v4 = require('./v4');\n\nvar uuid = v4;\nuuid.v1 = v1;\nuuid.v4 = v4;\nmodule.exports = uuid;","map":null,"metadata":{},"sourceType":"script"}

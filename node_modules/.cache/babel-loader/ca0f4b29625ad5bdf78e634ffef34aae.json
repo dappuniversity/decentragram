@@ -1,0 +1,1 @@
+{"ast":null,"code":"\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = doLimit;\n\nfunction doLimit(fn, limit) {\n  return function (iterable, iteratee, callback) {\n    return fn(iterable, limit, iteratee, callback);\n  };\n}\n\nmodule.exports = exports[\"default\"];","map":null,"metadata":{},"sourceType":"script"}

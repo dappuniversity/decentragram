@@ -1,0 +1,1 @@
+{"ast":null,"code":"/** PURE_IMPORTS_START _AsyncAction,_AsyncScheduler PURE_IMPORTS_END */\nimport { AsyncAction } from './AsyncAction';\nimport { AsyncScheduler } from './AsyncScheduler';\nexport var async =\n/*@__PURE__*/\nnew AsyncScheduler(AsyncAction);","map":null,"metadata":{},"sourceType":"module"}
